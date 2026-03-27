@@ -1,0 +1,208 @@
+{
+  "codes": {
+    "ALASU-UEEUM3": {
+      "createdAt": "2026-03-26T00:07:41.868Z",
+      "bottles": 1,
+      "time": 17,
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-B9FADT": {
+      "createdAt": "2026-03-26T00:11:43.765Z",
+      "bottles": 1,
+      "time": 16,
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-7KQP2K": {
+      "createdAt": "2026-03-26T05:14:12.846Z",
+      "bottles": 1,
+      "time": 21,
+      "used": true,
+      "usedAt": "2026-03-26T05:17:02.088Z"
+    },
+    "ALASU-MW9CLP": {
+      "createdAt": "2026-03-26T05:28:59.617Z",
+      "bottles": 1,
+      "time": 15,
+      "used": true,
+      "usedAt": "2026-03-26T05:29:10.660Z"
+    },
+    "ALASU-K3JGYT": {
+      "createdAt": "2026-03-26T05:31:01.280Z",
+      "bottles": 1,
+      "time": 18,
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-Q5FHHJ": {
+      "createdAt": "2026-03-26T05:33:21.098Z",
+      "bottles": 1,
+      "time": 19,
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-QABDUY": {
+      "createdAt": "2026-03-26T05:35:07.713Z",
+      "bottles": 2,
+      "time": 35,
+      "used": true,
+      "usedAt": "2026-03-26T05:35:12.921Z"
+    },
+    "ALASU-UCS8NN": {
+      "createdAt": "2026-03-26T06:36:09.411Z",
+      "bottles": 1,
+      "time": 16,
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-9CRYR8": {
+      "createdAt": "2026-03-26T06:37:19.547Z",
+      "bottles": 1,
+      "time": 21,
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-Q9UHEL": {
+      "createdAt": "2026-03-26T06:54:35.015Z",
+      "bottles": 1,
+      "time": 16,
+      "used": true,
+      "usedAt": "2026-03-26T06:56:01.625Z"
+    },
+    "ALASU-SJD626": {
+      "createdAt": "2026-03-26T07:01:18.850Z",
+      "bottles": 1,
+      "time": 15,
+      "used": true,
+      "usedAt": "2026-03-26T07:01:23.258Z"
+    },
+    "ALASU-9ZNM46": {
+      "createdAt": "2026-03-26T07:05:42.258Z",
+      "bottles": 1,
+      "time": 16,
+      "used": true,
+      "usedAt": "2026-03-26T07:05:51.798Z"
+    },
+    "ALASU-W5T8RX": {
+      "createdAt": "2026-03-26T07:07:14.499Z",
+      "bottles": 2,
+      "time": 23,
+      "product": "water",
+      "used": true,
+      "usedAt": "2026-03-26T07:07:23.379Z"
+    },
+    "ALASU-6EVAVE": {
+      "createdAt": "2026-03-26T07:11:18.142Z",
+      "bottles": 1,
+      "time": 10,
+      "product": "lemonade",
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-LDR5YK": {
+      "createdAt": "2026-03-26T07:15:21.435Z",
+      "bottles": 1,
+      "time": 13,
+      "product": "lemonade",
+      "used": true,
+      "usedAt": "2026-03-26T07:15:25.150Z"
+    },
+    "ALASU-2SWELH": {
+      "createdAt": "2026-03-26T07:18:21.079Z",
+      "bottles": 2,
+      "time": 35,
+      "product": "water",
+      "used": true,
+      "usedAt": "2026-03-26T07:18:25.996Z"
+    },
+    "ALASU-FYPVDM": {
+      "createdAt": "2026-03-26T07:21:26.080Z",
+      "bottles": 2,
+      "time": 20,
+      "product": "lemonade",
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-KBFNDX": {
+      "createdAt": "2026-03-26T07:58:02.884Z",
+      "bottles": 1,
+      "time": 18,
+      "product": "water",
+      "used": true,
+      "usedAt": "2026-03-26T07:58:44.293Z"
+    },
+    "ALASU-UN5JF9": {
+      "createdAt": "2026-03-26T07:59:51.583Z",
+      "bottles": 1,
+      "time": 10,
+      "product": "lemonade",
+      "used": true,
+      "usedAt": "2026-03-26T07:59:57.592Z"
+    },
+    "ALASU-CEG979": {
+      "createdAt": "2026-03-26T08:03:15.453Z",
+      "bottles": 1,
+      "time": 15,
+      "product": "water",
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-EGPFC4": {
+      "createdAt": "2026-03-26T08:03:51.796Z",
+      "bottles": 1,
+      "time": 14,
+      "product": "lemonade",
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-9LVBZP": {
+      "createdAt": "2026-03-26T08:04:23.440Z",
+      "bottles": 2,
+      "time": 22,
+      "product": "lemonade",
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-TBJQTV": {
+      "createdAt": "2026-03-26T09:39:49.739Z",
+      "bottles": 1,
+      "time": 16,
+      "product": "water",
+      "used": true,
+      "usedAt": "2026-03-26T09:40:14.463Z"
+    },
+    "ALASU-SUPQ3B": {
+      "createdAt": "2026-03-26T09:41:01.124Z",
+      "bottles": 1,
+      "time": 16,
+      "product": "lemonade",
+      "used": true,
+      "usedAt": "2026-03-26T09:41:06.034Z"
+    },
+    "ALASU-VAC68B": {
+      "createdAt": "2026-03-26T09:42:42.988Z",
+      "bottles": 2,
+      "time": 36,
+      "product": "water",
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-JKZH55": {
+      "createdAt": "2026-03-26T10:35:37.658Z",
+      "bottles": 1,
+      "time": 25,
+      "product": "water",
+      "used": false,
+      "usedAt": null
+    },
+    "ALASU-3FV8YN": {
+      "createdAt": "2026-03-26T10:38:18.258Z",
+      "bottles": 2,
+      "time": 33,
+      "product": "water",
+      "used": false,
+      "usedAt": null
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Admin/Desktop/alasu-site/app/template.tsx"],"sourcesContent":["\"use client\";\n\nimport { useEffect, useState } from \"react\";\n\nexport default function Template({ children }: { children: React.ReactNode }) {\n    const [isMounted, setIsMounted] = useState(false);\n\n    useEffect(() => {\n        // Запускаем плавное проявление через долю секунды после монтирования новой страницы\n        const timeout = setTimeout(() => setIsMounted(true), 10);\n        \n        return () => clearTimeout(timeout);\n    }, []);\n\n    return (\n        <div\n            className={`transition-opacity duration-700 ease-in-out ${\n                isMounted ? \"opacity-100\" : \"opacity-0\"\n            }`}\n        >\n            {children}\n        </div>\n    );\n}\n\r\n"],"names":[],"mappings":";;;;;AAEA;;;AAFA;;AAIe,SAAS,SAAS,EAAE,QAAQ,EAAiC;;IACxE,MAAM,CAAC,WAAW,aAAa,GAAG,IAAA,yKAAQ,EAAC;IAE3C,IAAA,0KAAS;8BAAC;YACN,oFAAoF;YACpF,MAAM,UAAU;8CAAW,IAAM,aAAa;6CAAO;YAErD;sCAAO,IAAM,aAAa;;QAC9B;6BAAG,EAAE;IAEL,qBACI,6LAAC;QACG,WAAW,CAAC,4CAA4C,EACpD,YAAY,gBAAgB,aAC9B;kBAED;;;;;;AAGb;GAnBwB;KAAA"}}]
+}
