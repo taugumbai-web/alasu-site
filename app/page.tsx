@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
-import Footer from "./components/Footer";
-import LanguageSelector, { Lang } from "./components/LanguageSelector";
-import { BurgerMenu, useReveal, useLang } from "./components/shared";
+import Footer from "@/app/components/Footer";
+import LanguageSelector, { Lang } from "@/app/components/LanguageSelector";
+import { BurgerMenu, useReveal, useLang } from "@/app/components/shared";
 
 const slides = [
     {
