@@ -37,8 +37,8 @@ export async function POST(req: NextRequest) {
             .select("id")
             .single();
 
-        if (error) {
-            console.error("Supabase insert error:", error.message);
+        if (error || !data) {
+            console.error("Supabase insert error:", error?.message);
             return NextResponse.json({ error: "Server error" }, { status: 500 });
         }
 

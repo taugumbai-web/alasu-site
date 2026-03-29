@@ -5,7 +5,9 @@ const CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 function generateCode(): string {
     let rand = "";
-    for (let i = 0; i < 6; i++) rand += CHARS[Math.floor(Math.random() * CHARS.length)];
+    for (let i = 0; i < 6; i++) {
+        rand += CHARS[Math.floor(Math.random() * CHARS.length)];
+    }
     return `ALASU-${rand}`;
 }
 
@@ -13,33 +15,29 @@ export async function POST(req: NextRequest) {
     try {
         const { time, bottles, product } = await req.json();
 
-        if (
-            typeof time !== "number" || time < 0 ||
-            typeof bottles !== "number" || bottles < 1 || bottles > 2
-        ) {
-            return NextResponse.json({ error: "Invalid request" }, { status: 400 });
-        }
-
         const code = generateCode();
 
-        const { error } = await supabase.from("game_codes").insert({
-            code,
-            bottles,
-            time: Math.floor(time),
-            product: product === "lemonade" ? "lemonade" : "water",
-            used: false,
-            used_at: null,
-        });
+        const { data, error } = await supabase
+            .from("game_codes")
+            .insert({
+                code,
+                bottles,
+                time: Math.floor(time),
+                product: product === "lemonade" ? "lemonade" : "water",
+                used: false,
+                used_at: null,
+            })
+            .select();
 
         if (error) {
-            console.error("Supabase insert error:", error.message);
-            // Return code anyway so player is not left without reward
-            return NextResponse.json({ code });
+            console.error("❌ SUPABASE ERROR FULL:", error);
+            return NextResponse.json({ error }, { status: 500 });
         }
 
-        return NextResponse.json({ code });
-    } catch (e) {
-        console.error("Win route error:", e);
-        return NextResponse.json({ error: "Server error" }, { status: 500 });
+        return NextResponse.json({ code, data });
+
+    } catch (e: any) {
+        console.error("❌ SERVER ERROR FULL:", e);
+        return NextResponse.json({ error: e.message }, { status: 500 });
     }
 }
