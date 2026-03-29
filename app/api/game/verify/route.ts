@@ -1,27 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { supabase } from "@/app/lib/supabase";
 
-const DATA_FILE = path.join(process.cwd(), "data", "codes.json");
 const ADMIN_PIN = process.env.ADMIN_PIN ?? "123";
-
-type CodeEntry = {
-    createdAt: string;
-    bottles: number;
-    time: number;
-    product?: "water" | "lemonade";
-    used: boolean;
-    usedAt: string | null;
-};
-
-function readData(): { codes: Record<string, CodeEntry> } {
-    if (!fs.existsSync(DATA_FILE)) return { codes: {} };
-    return JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
-}
-
-function writeData(data: { codes: Record<string, CodeEntry> }) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
-}
 
 export async function POST(req: NextRequest) {
     try {
@@ -35,35 +15,41 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: "Введите код" }, { status: 400 });
         }
 
-        const data = readData();
         const key = code.trim().toUpperCase();
-        const entry = data.codes[key];
 
-        if (!entry) {
+        const { data: entry, error } = await supabase
+            .from("game_codes")
+            .select("*")
+            .eq("code", key)
+            .single();
+
+        if (error || !entry) {
             return NextResponse.json({ valid: false, reason: "not_found" });
         }
 
         if (entry.used) {
-            return NextResponse.json({
-                valid: false,
-                reason: "used",
-                usedAt: entry.usedAt,
-            });
+            return NextResponse.json({ valid: false, reason: "used", usedAt: entry.used_at });
         }
 
-        // Mark as used
-        entry.used = true;
-        entry.usedAt = new Date().toISOString();
-        writeData(data);
+        const { error: updateError } = await supabase
+            .from("game_codes")
+            .update({ used: true, used_at: new Date().toISOString() })
+            .eq("code", key);
+
+        if (updateError) {
+            console.error("Supabase update error:", updateError.message);
+            return NextResponse.json({ error: "Server error" }, { status: 500 });
+        }
 
         return NextResponse.json({
             valid: true,
             bottles: entry.bottles,
             time: entry.time,
             product: entry.product ?? "water",
-            createdAt: entry.createdAt,
+            createdAt: entry.created_at,
         });
-    } catch {
+    } catch (e) {
+        console.error("Verify route error:", e);
         return NextResponse.json({ error: "Server error" }, { status: 500 });
     }
 }

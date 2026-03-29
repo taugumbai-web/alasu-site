@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-
-const DATA_FILE = path.join(process.cwd(), "data", "contacts.json");
+import { supabase } from "@/app/lib/supabase";
 
 export type Category = "distributor" | "client" | "order" | "other";
 export type ContactStatus = "new" | "read" | "done";
@@ -17,25 +14,6 @@ export type ContactEntry = {
     status: ContactStatus;
 };
 
-function ensureFile() {
-    const dir = path.dirname(DATA_FILE);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    if (!fs.existsSync(DATA_FILE)) fs.writeFileSync(DATA_FILE, JSON.stringify({ contacts: [] }));
-}
-
-function readData(): { contacts: ContactEntry[] } {
-    ensureFile();
-    return JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
-}
-
-function writeData(data: { contacts: ContactEntry[] }) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
-}
-
-function genId(): string {
-    return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
-}
-
 export async function POST(req: NextRequest) {
     try {
         const { category, name, phone, message } = await req.json();
@@ -47,21 +25,24 @@ export async function POST(req: NextRequest) {
         const validCategories: Category[] = ["distributor", "client", "order", "other"];
         const cat: Category = validCategories.includes(category) ? category : "other";
 
-        const data = readData();
-        const entry: ContactEntry = {
-            id: genId(),
-            createdAt: new Date().toISOString(),
-            category: cat,
-            name: String(name).trim().slice(0, 100),
-            phone: String(phone).trim().slice(0, 30),
-            message: String(message ?? "").trim().slice(0, 1000),
-            status: "new",
-        };
+        const { data, error } = await supabase
+            .from("contacts")
+            .insert({
+                category: cat,
+                name: String(name).trim().slice(0, 100),
+                phone: String(phone).trim().slice(0, 30),
+                message: String(message ?? "").trim().slice(0, 1000),
+                status: "new",
+            })
+            .select("id")
+            .single();
 
-        data.contacts.unshift(entry); // newest first
-        writeData(data);
+        if (error) {
+            console.error("Supabase insert error:", error.message);
+            return NextResponse.json({ error: "Server error" }, { status: 500 });
+        }
 
-        return NextResponse.json({ ok: true, id: entry.id });
+        return NextResponse.json({ ok: true, id: data.id });
     } catch {
         return NextResponse.json({ error: "Server error" }, { status: 500 });
     }

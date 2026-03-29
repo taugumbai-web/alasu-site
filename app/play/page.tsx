@@ -8,12 +8,12 @@ import LanguageSelector from "../components/LanguageSelector";
 /* ═══════════════════════════════════════════
    CONSTANTS
 ═══════════════════════════════════════════ */
-const GRAVITY      = 0.03;   // px/frame²
-const BOUNCE       = 0.82;   // energy on bounce
+const GRAVITY      = 0.11;   // px/frame²  — быстрое падение
+const BOUNCE       = 0.72;   // energy on bounce
 const DROP_R       = 26;     // drop radius px
-const PLAT_H       = 14;     // platform height
-const PLAT_HALF    = 130;    // platform half-width
-const PLAT_LAG     = 0.13;   // follow smoothing (0=instant,1=never)
+const PLAT_H       = 12;     // platform height
+const PLAT_MAX     = 72;     // platform half-width (desktop max)
+const PLAT_LAG     = 0.09;   // follow smoothing (0=instant,1=never)
 const WIN1_SEC     = 15;     // bronze: 1 bottle
 const WIN2_SEC     = 30;     // gold: 2 bottles
 
@@ -22,10 +22,10 @@ type Ripple = { x: number; y: number; r: number; a: number };
 type Spark  = { x: number; y: number; vx: number; vy: number; a: number; r: number };
 
 function getDrift(t: number): number {
-    if (t > 28) return 0.4;
-    if (t > 18) return 0.25;
-    if (t > 8)  return 0.15;
-    return 0.06;
+    if (t > 18) return 0.75;
+    if (t > 10) return 0.50;
+    if (t > 4)  return 0.28;
+    return 0.12;
 }
 
 function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
@@ -200,6 +200,7 @@ export default function PlayPage() {
 
             const W = canvas.width;
             const H = canvas.height;
+            const PLAT_HALF = Math.min(PLAT_MAX, W * 0.15);
 
             /* ── clear ── */
             ctx.clearRect(0, 0, W, H);

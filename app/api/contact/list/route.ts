@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { supabase } from "@/app/lib/supabase";
 
-const DATA_FILE = path.join(process.cwd(), "data", "contacts.json");
 const ADMIN_PIN = process.env.ADMIN_PIN ?? "123";
 
 export async function POST(req: NextRequest) {
@@ -11,11 +9,29 @@ export async function POST(req: NextRequest) {
         if (pin !== ADMIN_PIN) {
             return NextResponse.json({ error: "Неверный PIN" }, { status: 401 });
         }
-        if (!fs.existsSync(DATA_FILE)) {
-            return NextResponse.json({ contacts: [] });
+
+        const { data, error } = await supabase
+            .from("contacts")
+            .select("*")
+            .order("created_at", { ascending: false });
+
+        if (error) {
+            console.error("Supabase select error:", error.message);
+            return NextResponse.json({ error: "Server error" }, { status: 500 });
         }
-        const data = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
-        return NextResponse.json({ contacts: data.contacts ?? [] });
+
+        // Normalize snake_case to camelCase for frontend compatibility
+        const contacts = (data ?? []).map((c) => ({
+            id: c.id,
+            createdAt: c.created_at,
+            category: c.category,
+            name: c.name,
+            phone: c.phone,
+            message: c.message,
+            status: c.status,
+        }));
+
+        return NextResponse.json({ contacts });
     } catch {
         return NextResponse.json({ error: "Server error" }, { status: 500 });
     }

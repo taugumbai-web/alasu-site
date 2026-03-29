@@ -166,7 +166,7 @@ function PersonCard({
             <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5 md:p-6">
                 {/* Имя + роль */}
                 <div
-                    className="translate-y-2 group-hover:translate-y-0 transition-transform duration-400 ease-out"
+                    className="sm:translate-y-2 sm:group-hover:translate-y-0 transition-transform duration-400 ease-out"
                 >
                     <p
                         className="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase mb-1 sm:mb-1.5 opacity-70"
@@ -185,7 +185,7 @@ function PersonCard({
                     target="_blank"
                     rel="noreferrer"
                     onClick={e => e.stopPropagation()}
-                    className="mt-3 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-350 ease-out max-w-full overflow-hidden"
+                    className="mt-3 flex items-center gap-2 sm:opacity-0 sm:group-hover:opacity-100 sm:translate-y-3 sm:group-hover:translate-y-0 transition-all duration-350 ease-out max-w-full overflow-hidden"
                     style={{ transitionDelay: "50ms" }}
                 >
                     <span
@@ -370,7 +370,7 @@ export default function AmbassadorsPage() {
                         className="grid gap-3 sm:gap-4"
                         style={{
                             gridTemplateColumns: "repeat(auto-fill, minmax(min(160px, 100%), 1fr))",
-                            gridAutoRows: "160px",
+                            gridAutoRows: "clamp(180px, 25vw, 200px)",
                         }}
                     >
                         {people.map((person, i) => (

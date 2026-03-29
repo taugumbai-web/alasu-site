@@ -9,13 +9,13 @@ import LanguageSelector from "../components/LanguageSelector";
    CONSTANTS
 ═══════════════════════════════════════════ */
 const GAME_DURATION = 30;   // total seconds
-const FRUIT_R       = 44;   // fruit radius px (bigger = easier to hit)
+const FRUIT_R       = 34;   // fruit radius px (smaller = harder to hit)
 const MAX_MISSES    = 3;    // 3 lives
-const WIN_SURE      = 10;   // 1 банка лимонати
-const WIN_DOUBLE    = 20;   // 2 банки лимонати
+const WIN_SURE      = 12;   // 1 банка лимонати
+const WIN_DOUBLE    = 22;   // 2 банки лимонати
 const COOLDOWN_MS   = 30 * 60 * 1000; // 30 минут
 const LS_KEY        = "alasu_last_play_fruits";
-const GRAVITY       = 0.15; // slower fall
+const GRAVITY       = 0.22; // faster fall
 
 type Screen   = "start" | "playing" | "won1" | "won2" | "lose";
 type FruitKind = "lemon" | "pear" | "kiwi" | "pineapple" | "melon" | "rotten";
@@ -257,7 +257,7 @@ export default function PlayPage() {
 
         /* ── spawn ── */
         function spawnFruit(W: number, H: number) {
-            const isRotten = Math.random() < 0.15;
+            const isRotten = Math.random() < 0.25;
             const kind: FruitKind = isRotten
                 ? "rotten"
                 : GOOD[Math.floor(Math.random() * GOOD.length)];
@@ -350,8 +350,8 @@ export default function PlayPage() {
                 if (elapsedR.current >= nextSpawnR.current) {
                     spawnFruit(W, H);
                     const interval = fast
-                        ? 0.5 + Math.random() * 0.35
-                        : 1.0 + Math.random() * 0.7;
+                        ? 0.35 + Math.random() * 0.25
+                        : 0.65 + Math.random() * 0.45;
                     nextSpawnR.current = elapsedR.current + interval;
                 }
 

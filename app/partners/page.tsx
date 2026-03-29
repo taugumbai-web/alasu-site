@@ -75,7 +75,7 @@ export default function PartnersPage() {
 
             <BurgerMenu open={menuOpen} onClose={() => setMenuOpen(false)} lang={lang} />
 
-            <header className="fixed top-0 left-0 right-0 z-[100] border-b border-white/[0.08] backdrop-blur-xl bg-[#061842]/80">
+            <header className="sticky top-0 left-0 right-0 z-[100] w-full border-b border-white/[0.08] backdrop-blur-xl bg-[#061842]/80">
                 <div className="flex justify-between items-center px-5 sm:px-8 md:px-12 py-3.5">
                     <Link href="/" className="no-underline group">
                         <span className="alasu-logo text-lg sm:text-xl text-white select-none transition-all duration-500 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-300 group-hover:via-white group-hover:to-blue-400">
@@ -94,7 +94,7 @@ export default function PartnersPage() {
                 </div>
             </header>
 
-            <main className="flex-1 flex flex-col pt-28 sm:pt-32 pb-24 sm:pb-32 relative overflow-hidden min-h-screen">
+            <main className="flex-1 flex flex-col pt-8 sm:pt-12 pb-24 sm:pb-32 relative overflow-hidden min-h-screen">
                 <div className="absolute top-[20%] left-[10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none orb-1" />
                 <div className="absolute bottom-[10%] right-[10%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none orb-2" />
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:48px_48px] sm:bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none" />
@@ -114,7 +114,7 @@ export default function PartnersPage() {
                             <span className="inline-block w-8 sm:w-12 h-px bg-gradient-to-l from-transparent to-blue-500" />
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[0.04em] leading-tight text-white mb-4 sm:mb-6">
+                        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[0.04em] leading-[1.15] text-white mb-4 sm:mb-6">
                             {lang === "ru" ? (
                                 <>Стать нашим{" "}<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">партнёром</span></>
                             ) : lang === "kz" ? (

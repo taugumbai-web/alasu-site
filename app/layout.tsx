@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alasu.kz"),
+  metadataBase: new URL("https://www.alasu.live"),
   title: {
     default: "ALASU — Чистая вода из Хан Тэнгри",
     template: "%s | ALASU",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ru_KZ",
     alternateLocale: ["kk_KZ", "en_US"],
-    url: "https://alasu.kz",
+    url: "https://www.alasu.live",
     siteName: "ALASU",
     title: "ALASU — Чистая вода из Хан Тэнгри",
     description: "Природная минеральная вода из источников Хан Тэнгри. Негазированная, газированная, Zam Zam и SPORT+.",
