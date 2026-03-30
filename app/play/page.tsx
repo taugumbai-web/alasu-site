@@ -483,7 +483,7 @@ export default function PlayPage() {
             {/* ── header ── */}
             <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-5 sm:px-8 py-3.5">
                 <Link href="/" className="no-underline">
-                    <span className="text-lg font-black tracking-[0.25em] text-white/80 hover:text-white transition-colors select-none">
+                    <span className="alasu-logo text-lg text-white/80 hover:text-white transition-colors select-none">
                         ALASU
                     </span>
                 </Link>

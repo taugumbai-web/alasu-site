@@ -138,10 +138,9 @@ export function BurgerMenu({ open, onClose, lang }: { open: boolean; onClose: ()
 
             {/* ── Giant watermark ── */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-                <span className="font-black text-white transition-all duration-700"
+                <span className="alasu-logo text-white transition-all duration-700"
                     style={{
                         fontSize: "clamp(8rem, 22vw, 22rem)",
-                        letterSpacing: "-0.04em",
                         opacity: open ? 0.025 : 0,
                         transform: open ? "translateY(0)" : "translateY(40px)",
                     }}>

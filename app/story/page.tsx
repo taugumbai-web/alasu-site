@@ -195,7 +195,10 @@ export default function StoryPage() {
                                 {txt.ch1title[L] ?? txt.ch1title.ru}
                             </h2>
                             <p className="text-base sm:text-[17px] text-white/60 leading-[1.8] font-light">
-                                {txt.p1[L] ?? txt.p1.ru}
+                                {L === "ru" ? <><span className="alasu-logo text-white/60">ALASU</span> рождается в сердце Хан Тэнгри — среди ледников, горного воздуха и чистейших природных источников.</>
+                                : L === "kz" ? <><span className="alasu-logo text-white/60">ALASU</span> Хан Тәңірінің жүрегінде дүниеге келеді — мұздықтар, тау ауасы мен ең таза табиғи бастаулар арасында.</>
+                                : L === "en" ? <><span className="alasu-logo text-white/60">ALASU</span> is born in the heart of Khan Tengri — among glaciers, mountain air and the purest natural springs.</>
+                                : <><span className="alasu-logo text-white/60">ALASU</span>诞生于汗腾格里的心脏——在冰川、山间空气和最纯净的天然泉水之间。</>}
                             </p>
                         </div>
 
@@ -327,7 +330,10 @@ export default function StoryPage() {
 
                     <p className="text-2xl sm:text-3xl md:text-[2.5rem] font-black uppercase tracking-wide text-white leading-snug mb-5"
                         style={{ textShadow: "0 0 60px rgba(59,130,246,0.2)" }}>
-                        {txt.q1[L] ?? txt.q1.ru}
+                        {L === "ru" ? <><span className="alasu-logo">ALASU</span> — это не просто вода.</>
+                        : L === "kz" ? <><span className="alasu-logo">ALASU</span> — бұл жай ғана су емес.</>
+                        : L === "en" ? <><span className="alasu-logo">ALASU</span> is not just water.</>
+                        : <><span className="alasu-logo">ALASU</span>不仅仅是水。</>}
                     </p>
                     <p className="text-2xl sm:text-3xl md:text-[2.5rem] font-black uppercase tracking-wide leading-snug"
                         style={{ background: "linear-gradient(135deg,#60a5fa 0%,#a5f3fc 50%,#60a5fa 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>

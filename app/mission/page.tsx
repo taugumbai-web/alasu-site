@@ -151,7 +151,10 @@ function PillarsSection({ lang }: { lang: string }) {
                         {T.principles[L] ?? T.principles.ru}
                     </p>
                     <h2 className="font-black uppercase shimmer-text" style={{ fontSize: "clamp(2rem,5vw,4rem)", letterSpacing: "-0.01em" }}>
-                        {T.pillarsTitle[L] ?? T.pillarsTitle.ru}
+                        {L === "ru" ? <>Три кита <span className="alasu-logo">ALASU</span></>
+                        : L === "kz" ? <><span className="alasu-logo">ALASU</span> үш тірегі</>
+                        : L === "en" ? <>Three pillars of <span className="alasu-logo">ALASU</span></>
+                        : <><span className="alasu-logo">ALASU</span>三大支柱</>}
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">

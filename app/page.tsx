@@ -651,22 +651,32 @@ export default function Home() {
                         </p>
 
                         {/* title */}
-                        <h1 className="leading-none text-white drop-shadow-2xl"
+                        <h1 className="leading-none drop-shadow-2xl"
                             style={{
-                                fontSize: "clamp(2.6rem,10vw,6rem)",
+                                fontSize: "clamp(4rem,14vw,9rem)",
                                 fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
                                 fontWeight: 800,
-                                letterSpacing: "-0.02em",
+                                letterSpacing: "-0.03em",
                                 textTransform: "lowercase",
-                                textShadow: "0 0 120px rgba(59,130,246,0.2), 0 4px 30px rgba(0,0,0,0.5)",
+                                background: slideIdx === 0
+                                    ? "linear-gradient(135deg, #93c5fd 0%, #ffffff 45%, #67e8f9 100%)"
+                                    : "linear-gradient(135deg, #ffffff 0%, #bfdbfe 100%)",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                backgroundClip: "text",
+                                filter: "drop-shadow(0 0 60px rgba(59,130,246,0.35))",
                             }}>
                             {slide.title[L]}
                         </h1>
 
                         {/* subtitle */}
-                        <p className="mt-5 sm:mt-6 text-sm sm:text-base md:text-lg text-white/65 font-light tracking-wide max-w-[280px] sm:max-w-md leading-relaxed">
-                            {slide.sub[L]}
-                        </p>
+                        <div className="mt-6 sm:mt-8 flex items-center gap-3 sm:gap-4">
+                            <span className="w-8 sm:w-12 h-px bg-gradient-to-r from-transparent to-blue-400/50" />
+                            <p className="text-[11px] sm:text-[13px] text-white/55 font-light tracking-[0.25em] uppercase">
+                                {slide.sub[L]}
+                            </p>
+                            <span className="w-8 sm:w-12 h-px bg-gradient-to-l from-transparent to-blue-400/50" />
+                        </div>
 
                         {/* CTA buttons on first slide */}
                         {slideIdx === 0 && (
