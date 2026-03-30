@@ -10,6 +10,10 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: "Неверный PIN" }, { status: 401 });
         }
 
+        if (!["new", "read", "done"].includes(status)) {
+            return NextResponse.json({ error: "Invalid status" }, { status: 400 });
+        }
+
         const { error } = await supabase
             .from("contacts")
             .update({ status })
