@@ -388,7 +388,7 @@ export default function AmbassadorsPage() {
                             {lang === "ru" ? "Хочешь быть с нами?" : lang === "kz" ? "Бізбен болғың келе ме?" : lang === "en" ? "Want to join us?" : "想加入我们吗？"}
                         </p>
                         <h2 className="relative text-2xl sm:text-3xl md:text-4xl font-black text-white mb-6">
-                            {lang === "ru" ? "Стань амбасадором ALASU" : lang === "kz" ? "ALASU амбасадоры болыңыз" : lang === "en" ? "Become an ALASU Ambassador" : "成为ALASU大使"}
+                            {lang === "ru" ? <>Стань амбасадором <span className="alasu-logo">ALASU</span></> : lang === "kz" ? <><span className="alasu-logo">ALASU</span> амбасадоры болыңыз</> : lang === "en" ? <>Become an <span className="alasu-logo">ALASU</span> Ambassador</> : <>成为<span className="alasu-logo">ALASU</span>大使</>}
                         </h2>
                         <a
                             href={`https://wa.me/77008878887?text=${encodeURIComponent(lang === "ru" ? "Хочу стать амбасадором ALASU!" : lang === "kz" ? "ALASU амбасадоры болғым келеді!" : lang === "en" ? "I want to become an ALASU Ambassador!" : "我想成为ALASU大使！")}`}

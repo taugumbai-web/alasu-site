@@ -128,12 +128,12 @@ export default function PartnersPage() {
 
                         <p className="text-base sm:text-lg md:text-xl text-white/60 leading-relaxed font-light max-w-2xl mx-auto mb-12 sm:mb-16 px-2">
                             {lang === "ru"
-                                ? "Мы открыты для сотрудничества с дистрибьюторами, торговыми сетями и бизнесом. ALASU — это качество, которому доверяют."
+                                ? <>Мы открыты для сотрудничества с дистрибьюторами, торговыми сетями и бизнесом. <span className="alasu-logo text-white/60">ALASU</span> — это качество, которому доверяют.</>
                                 : lang === "kz"
-                                ? "Біз дистрибьюторлармен, сауда желілерімен және бизнеспен ынтымақтастыққа ашықпыз. ALASU — бұл сенім артатын сапа."
+                                ? <>Біз дистрибьюторлармен, сауда желілерімен және бизнеспен ынтымақтастыққа ашықпыз. <span className="alasu-logo text-white/60">ALASU</span> — бұл сенім артатын сапа.</>
                                 : lang === "en"
-                                ? "We are open to cooperation with distributors, retail chains and businesses. ALASU is quality you can trust."
-                                : "我们向分销商、零售链和企业开放合作。ALASU是值得信赖的品质。"}
+                                ? <>We are open to cooperation with distributors, retail chains and businesses. <span className="alasu-logo text-white/60">ALASU</span> is quality you can trust.</>
+                                : <>我们向分销商、零售链和企业开放合作。<span className="alasu-logo text-white/60">ALASU</span>是值得信赖的品质。</>}
                         </p>
                     </div>
 

@@ -183,7 +183,7 @@ function QuoteSection({ lang }: { lang: string }) {
                     {T.quote[L] ?? T.quote.ru}
                 </blockquote>
                 <p className="text-[11px] tracking-[0.45em] uppercase font-bold" style={{ color: "rgba(96,165,250,0.35)" }}>
-                    ALASU · Khan Tengri · 7010m
+                    <span className="alasu-logo">ALASU</span> · Khan Tengri · 7010m
                 </p>
             </div>
         </section>

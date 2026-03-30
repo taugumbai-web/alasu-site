@@ -339,7 +339,7 @@ export default function StoryPage() {
                         <div className="h-px w-20 bg-gradient-to-r from-transparent to-blue-400/35" />
                         <div className="w-2 h-2 rounded-full bg-blue-400/60"
                             style={{ boxShadow: "0 0 10px rgba(96,165,250,0.8)" }} />
-                        <span className="text-[10px] tracking-[0.4em] uppercase text-white/20 font-bold">ALASU</span>
+                        <span className="alasu-logo text-[10px] text-white/20">ALASU</span>
                         <div className="w-2 h-2 rounded-full bg-blue-400/60"
                             style={{ boxShadow: "0 0 10px rgba(96,165,250,0.8)" }} />
                         <div className="h-px w-20 bg-gradient-to-l from-transparent to-blue-400/35" />
