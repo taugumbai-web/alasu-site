@@ -41,14 +41,14 @@ const PRODUCTS = [
     },
     {
         href: "/catalog/lemonade",
-        img: "/Ала лимонати/Тархун.jpeg",
+        img: "/Ала лимонати/Тархун-removebg-preview.png",
         label: { ru: "Ала Лимонати", kz: "Ала Лимонати", en: "Ala Lemonati", zh: "柠檬水" },
         desc:  { ru: "Натуральные лимонады", kz: "Табиғи лимонадтар", en: "Natural lemonades", zh: "天然柠檬水" },
         accent: "#22c55e", accentRgb: "34,197,94",
     },
     {
         href: "/catalog/energy",
-        img: "/энергетики/Ала gold.jpeg",
+        img: "/энергетики/Ала_gold-removebg-preview.png",
         label: { ru: "Со вкусом энергетика", kz: "Энергетик дәмі", en: "Energy Flavor", zh: "能量口味" },
         desc:  { ru: "Заряд на весь день", kz: "Бүкіл күнге заряд", en: "Power for the day", zh: "全天能量" },
         accent: "#f59e0b", accentRgb: "245,158,11",
