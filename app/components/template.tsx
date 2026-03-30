@@ -543,7 +543,7 @@ export default function CatalogTemplate({
                 <header className="fixed top-0 left-0 right-0 z-[100] border-b border-white/[0.08] backdrop-blur-xl bg-[#061842]/80">
                     <div className="flex justify-between items-center px-5 sm:px-8 md:px-12 py-3.5">
                         <Link href="/" className="no-underline">
-                            <span className="text-lg sm:text-xl font-black tracking-[0.25em] text-white select-none">ALASU</span>
+                            <span className="alasu-logo text-lg sm:text-xl text-white select-none">ALASU</span>
                         </Link>
                         <div className="flex items-center gap-3 sm:gap-6">
                             <LanguageSelector lang={lang} setLang={setLang} />
