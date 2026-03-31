@@ -714,6 +714,15 @@ export default function Home() {
             </div>
 
             <BurgerMenu open={menu} onClose={() => setMenu(false)} lang={lang} />
+
+            {/* SEO text block */}
+            <section className="relative z-30 bg-[#010b20] py-16 px-5" style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+                <div className="max-w-3xl mx-auto text-white/25 text-sm leading-relaxed space-y-4">
+                    <h2 className="text-white/40 font-bold text-base">Минеральная вода ALASU в Алматы</h2>
+                    <p>ALASU — природная минеральная вода из источников Хан Тэнгри. Купить воду в Алматы с доставкой домой или в офис. Чистая питьевая вода, натуральный минеральный состав и высокое качество.</p>
+                    <p>Мы предлагаем доставку воды по Алматы и всему Казахстану. ALASU — сочетание природной чистоты, минерального состава и премиального качества. Аласу су — таза табиғи су.</p>
+                </div>
+            </section>
         </>
     );
 }
